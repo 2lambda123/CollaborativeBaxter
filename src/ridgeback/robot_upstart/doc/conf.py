@@ -2,7 +2,7 @@
 
 import os
 import sys
-import xml.etree.ElementTree as etree
+import defusedxml.ElementTree
 
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
@@ -23,7 +23,7 @@ project = u'robot_upstart'
 copyright = u'2015, Mike Purvis'
 
 # Get version number from package.xml.
-tree = etree.parse('../package.xml')
+tree = defusedxml.ElementTree.parse('../package.xml')
 version = tree.find("version").text
 release = version
 
